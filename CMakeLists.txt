@@ -166,7 +166,7 @@ if (NOT HDF5_INSTALL_INCLUDE_DIR)
 endif (NOT HDF5_INSTALL_INCLUDE_DIR)
 if (NOT HDF5_INSTALL_DATA_DIR)
 set (HDF5_INSTALL_DATA_DIR ".")
-set (HDF5_INSTALL_CMAKE_DIR lib/cmake)
+set (HDF5_INSTALL_CMAKE_DIR lib/cmake/hdf5)
 endif (NOT HDF5_INSTALL_DATA_DIR)
 
 #-----------------------------------------------------------------------------
