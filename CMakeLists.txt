@@ -1,5 +1,12 @@
 cmake_minimum_required (VERSION 3.1.0)
-PROJECT (HDF5 C CXX)
+
+include(config/cmake/HunterGate.cmake)
+HunterGate(
+    URL "https://github.com/ruslo/hunter/archive/v0.12.1.tar.gz"
+    SHA1 "b888d27a3255f943da4c8d39906143b601bfc7fa"
+)
+
+PROJECT (HDF5 LANGUAGES C CXX)
 
 #-----------------------------------------------------------------------------
 # Instructions for use : Normal Build
@@ -158,13 +165,8 @@ if (NOT HDF5_INSTALL_INCLUDE_DIR)
   set (HDF5_INSTALL_INCLUDE_DIR include)
 endif (NOT HDF5_INSTALL_INCLUDE_DIR)
 if (NOT HDF5_INSTALL_DATA_DIR)
-  if (NOT WIN32)
-    set (HDF5_INSTALL_DATA_DIR share)
-    set (HDF5_INSTALL_CMAKE_DIR share/cmake)
-  else (NOT WIN32)
-    set (HDF5_INSTALL_DATA_DIR ".")
-    set (HDF5_INSTALL_CMAKE_DIR cmake)
-  endif (NOT WIN32)
+set (HDF5_INSTALL_DATA_DIR ".")
+set (HDF5_INSTALL_CMAKE_DIR lib/cmake)
 endif (NOT HDF5_INSTALL_DATA_DIR)
 
 #-----------------------------------------------------------------------------
